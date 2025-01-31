@@ -1,0 +1,450 @@
+
+body { 
+	background-color: white; 
+        font-family: "lucida grande",verdana,arial,sans-serif;
+        font-size: small;
+        margin: 0; 
+} 
+
+p {  
+        margin-bottom: 0; 
+}
+
+p + p {  
+        margin-top: 0; 
+        text-indent: 2em; 
+}
+
+h1 { font-size: large; }
+h2 { font-size: medium; }
+h3 { font-size: small; } 
+
+*.visible { display: block; }
+*.hidden {  display: none; }
+
+ul.tree
+{               
+	list-style: none;
+        margin-top: 0; 
+        margin-left: 0; 
+        padding-left: 0;
+        font-size: x-small;
+}
+
+ul.tree ul.tree_child
+{ 
+        padding-left: 0.8em; 
+}
+
+ul.tree a
+{ 
+  color: black; 
+}
+
+ul.tree_child, ul.tree_child a
+{ 
+        color: #404040;
+        font-size: x-small; 
+}
+
+li.tree_folder_open, li.tree_folder_closed, li.tree_item 
+{
+        padding-top: 0.5em; 
+}
+
+li.tree_folder_open
+{ 
+} 
+
+li.tree_folder_closed
+{ 
+} 
+
+li.tree_folder_closed > ul.tree
+{ 
+        display: none;
+} 
+
+li.tree_folder_open > ul.tree
+{ 
+        display: block;
+} 
+
+a {
+        text-decoration: none;
+}
+
+a:hover { background: #e0e0e0; }
+a:active { background: #d0d0d0; }
+
+span.tree_expander
+{
+        font-family: arial, sans-serif; /* Expander arrows not present on some other fonts */
+        cursor: pointer;
+        color: grey;
+} 
+
+span.expander 
+{ 
+        font-family: arial, sans-serif; /* Expander arrows not present on some other fonts */
+}
+
+/* Note: Not a child selector for IE6's sake.
+   As tree_item is leaf, there are no descendants to muckup. */
+li.tree_item span.tree_expander 
+{ 
+        cursor: none;
+        visibility: hidden; 
+} 
+
+span.folder_item
+{ 
+        font-weight: bold;
+        cursor: pointer; 
+} 
+
+span.diagram_item 
+{ 
+        font-weight: normal;
+} 
+
+span.diagram_item a
+{
+        font-weight: normal;
+}
+
+span.selected
+{ 
+        background-color: #FFFFAA; 
+} 
+
+div.showhidebar
+{ 	
+	text-align: right; 
+	font-size: x-small; 
+	color: grey; 
+} 
+
+div.showhidebar span 
+{ 
+	cursor: pointer; 
+} 
+
+div.text {
+    margin: 2em 4em;
+    max-width: 50em;
+}
+
+*#contentswrap
+{ 
+        overflow: auto; 
+        padding: 5px; 
+}
+
+*#contentswrap ul li a:hover { background: #d3d3d3; }
+*#contentswrap ul li a:active { background: #f0f0f0; }
+
+*#logoimg
+{ 
+        border: 1px solid #E0E0E0;
+}
+
+*#titlebar
+{
+	background: white; 
+	position: fixed; /* Create a new containing block for child positioning */
+        top: 0;
+        left: 0; 
+        width: 100%; 
+        z-index: 20; 
+} 
+
+
+*#titlebar, *#titleiconswrap, *#titlewrap, *#titlehomewrap, *#titleicons
+{ 
+	height: 41px;  /* Height of bg */ 
+}
+
+
+*#titlewrap
+{ 	
+	background: url('banner1.gif') repeat-x scroll right bottom; 
+	margin-right: 255px;
+        margin-left: 100px;
+}
+
+*.title
+{
+        font-size: 14px; /* Fixed size-title bar design requires fixed-sized fonts */ 
+        margin: 0;
+        padding-top: 0.7em;
+        padding-left: 0.5em; 
+}
+
+*#titlehomewrap
+{
+        background: url('banner3.gif') repeat-x scroll left bottom;
+        position: absolute;
+        top: 0; 
+        left: 0; 
+        width: 100px; 
+}
+
+*#titleiconswrap 
+{
+	background: url('banner3.gif') repeat-x scroll left bottom;	
+        position: absolute;
+	top: 0;  
+	right: 0; 
+	width: 324px; 
+}
+
+*#titleicons
+{ 
+	float: right;
+	padding-top: 5px; 
+	padding-right: 5px; 
+	height: 36px; /* #titlebar:height - padding-top */
+        font-size: x-small; 
+} 
+
+*#titleiconswrap ul
+{
+	display: inline;
+
+	padding: 0;
+        margin: 0; 
+	margin-left: 15px; 
+
+	list-style-image: none; 		
+} 
+
+*#titleiconswrap ul li 
+{
+    	display: inline;	
+	padding-left: 2px; 
+}
+
+*#titleiconswrap ul li:hover { background: #d3d3d3; }
+*#titleiconswrap ul li:active { background: #f0f0f0; }
+
+*#titlebar h3 
+{ 
+	background-color: transparent; 
+	margin: 0em; 
+	padding: 0.7em 0.3em 0.3em 0.3em; 
+} 
+
+*#optionbar
+{
+        background: #fafafa; 
+} 
+
+*#optionbar
+{
+        background: #fafafa; 
+        position: fixed; 	
+	bottom: 0; 
+	left: 0; 
+	width: 100%;
+	border-top: 1px solid #909090;
+        font-size: x-small;
+        z-index: 20; 
+} 
+
+*#optionbar ul
+{ 
+	margin: 5px; 
+	padding-left: 0; 
+	list-style-image: none; 		
+	display: inline; 
+} 
+
+*#optionbar ul li 
+{
+	display: inline; 	
+	padding-right: 5px; 
+}
+
+*#optionbar a 
+{ 
+	color: black; 
+}
+
+*#optionbarshow, *#optionbarhide 
+{
+        font-size: 10px; 
+	cursor: pointer;
+        padding-left: 0.5em;
+        color: #000099; 
+        background-color: #eaeaea; 
+}
+
+*#optionbarwrap
+{
+        margin: 0.25em;
+        padding: 0; 
+}
+
+div.optionbaricons {
+}
+
+div.optionbaricons table {
+    float: left;
+    padding: 1em;
+}
+
+div.optionbaricons table td {
+}
+
+div.optionbaricons table a {
+}
+
+*#optionbarshow:hover, *#optionbarhide:hover { background: #e0e0e0; }
+*#optionbarshow:active, *#optionbarhide:active { background: #d0d0d0; }
+
+*#optionbarwrap.hidingoptionbar { display: none; }
+*#optionbarshow.hidingoptionbar { display: block; }
+*#optionbarhide.hidingoptionbar { display: none; } 
+
+*#optionbarwrap.showingoptionbar { display: block; } 
+*#optionbarshow.showingoptionbar { display: none; } 
+*#optionbarhide.showingoptionbar { display: block; } 
+
+
+*#overlay 
+{
+  position: absolute; 
+  z-index: 30; 
+
+  top: 0pt; left: 0pt; 
+  width: 100%; height: 100%;
+
+}
+
+*#overlay.visible { display: block; }
+*#overlay.hidden { display: none; } 
+
+*.overlayclose {
+        background: transparent url('close.gif') no-repeat scroll 0% 0%;
+        cursor: pointer; 
+        height: 28px; width: 28px;
+}
+
+*.overlayclose:hover {
+    background: transparent url('close.gif') no-repeat scroll 0% 0%;
+}
+
+*.overlayclose:active {
+    background: transparent url('close.gif') no-repeat scroll 0% 0%;
+}    
+
+*#opaque {  
+        color:#FFFFFF;
+	background-color:#000000;
+
+	position: fixed; 
+        z-index: 29; 
+        top:0px; left:0px; 
+        width: 100%; height:100%; 
+
+        /* Supported by current Mozilla, Safari, and Opera 
+           http://www.w3.org/TR/css3-color/#transparency */ 
+	opacity: 0.5; 
+
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50); /* IE */
+}
+
+*#opaque.visible { display: block; }
+*#opaque.hidden { display: none; } 
+
+img { border: 0 none; } 
+
+img.slice 
+{ 
+        border: 1px solid #e0e0e0;
+        margin-right: 1px; 
+} 
+
+img.thumb
+{ 
+        padding-top: 0.25em; 
+        padding-bottom: 1em; 
+       	padding-left: 0em; 
+} 
+
+img.int_link_inline img.ext_link_inline 
+{
+        position: relative;
+        bottom: -2px; 
+}
+
+div.caption
+{ 
+        font-weight: normal;
+        display: none; 
+}
+
+div.spacer
+{
+        clear:both;
+        height: 4.6em;
+}
+
+@media print { 
+    div.caption {
+        display: inline; 
+    } 
+}
+
+span.inactive
+{
+        color: grey; 
+} 
+
+*#contents { 
+        /* Ensure contents appears below fixed-position titlebar */ 
+        position: relative;
+        top: 41px; /* #titlebar:height */
+
+        /* Ensure we can center the iPad warning if necessary */ 
+        width: 100%;
+        height: 100%; 
+} 
+
+*#unavailable_on_ipad {
+        width: 100%;
+        height: 100%;
+} 
+
+*#slicelist { 		
+	overflow: auto;
+
+        position: fixed;
+        right: 0;
+        top: 41px; /* #titlebar:height */
+        width: 25%;
+        height: 100%;
+        z-index: 25; /* Covers option bar */ 
+        background: #fafafa; /* As for option bar */ 
+
+        border-left: 5px solid #c1c1c1; 
+}
+
+*#sliceshow, *#slicehide
+{
+        font-size: 10px; /* Fixed size-title bar design requires fixed-sized fonts */ 
+        cursor: pointer;
+        color: #000099; 
+}
+
+*#sliceshow.hidingslicelist { display: inline; }
+*#slicehide.hidingslicelist { display: none; }
+*#slicelist.hidingslicelist { display: none; }
+
+*#contents.hidingslicelist { max-width: 100%; } 
+
+*#sliceshow.showingslicelist { display: none; } 
+*#slicehide.showingslicelist { display: inline; } 
+*#slicelist.showingslicelist { display: block; }
+*#contents.showingslicelist { max-width: 80%; }

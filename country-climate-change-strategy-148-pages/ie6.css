@@ -1,0 +1,96 @@
+
+
+/* Override standards-compliant CSS to achieve fixed-positioning in IE6 */ 
+/* Thanks to: http://tagsoup.com/cookbook/css/fixed/ */ 
+
+*#optionbar
+{
+        position: absolute; 	
+	bottom: 0; 
+	left: 0;
+
+        border-right: 1px solid #909090; 
+} 
+
+body
+{
+  padding: 0 0px 0 1px; /* 1px ensures that optionbar appears */ 
+}
+
+@media screen 
+{ 
+  * html 
+  {  
+    overflow-y: hidden; /* Ensure you can't scroll out the optionbar */
+  } 
+
+  * html body 
+  {  
+    height: 100%; 
+    overflow: auto;
+    overflow-x: hidden; /* Ensure body scroll-x doesn't obscure option bar */ 
+  }
+}
+
+/* Order is significant here. We'd prefer to use child selector '>' 
+   instead but IE6 doesn't support it. */ 
+
+li.tree_folder_open ul.tree
+{ 
+        display: block;
+} 
+
+li.tree_folder_closed ul.tree
+{ 
+        display: none;
+} 
+
+*#slicelist { 		
+        position: absolute; /* Override 'fixed' */ 
+}
+
+*#opaque {  
+	position: absolute; /* IE6 can't handle fixed  */
+        width: 2000px; height:2000px; /* IE6 can't handle percentages */  
+        filter: alpha(opacity=50); /* older IE */
+}
+
+*.hidden { display: none; } /* IE6 can't handle class selectors on id selectors */ 
+*.visible { display: block; }
+
+div.spacer  /* Disabled as it enables viewport scrollbars */ 
+{ 
+        clear: none; 
+        height: auto; 
+}
+
+*#logoimg
+{
+        /* Doesn't understand max-width */ 
+        width: 0px;
+        height: 0px; 
+}
+
+*#titlewrap
+{
+        margin-right: 0px; 
+}
+
+img.slice 
+{ 
+	border-width: 1px; 
+	border-color: grey;
+} 
+
+*#contents { 
+        position: static; /* No need to reposition in IE6 */ 
+} 
+
+*#ie6sliceimgbox
+{
+        overflow: auto;
+        width: 100%;
+        height: 88%;
+}
+
+/* NB: tree.js contains CSS settings for IE6 */ 
